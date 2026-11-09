@@ -1,0 +1,32 @@
+@use '../../shared/theme/sass-tokens' as tokens;
+
+.sd-ai-work__section > summary {
+  gap: tokens.$space-2;
+  list-style: none;
+  cursor: pointer;
+
+  &::-webkit-details-marker { display: none; }
+  &::after { content: '▾'; color: tokens.$color-accent-ink; }
+  &:focus-visible { outline: tokens.$border-width solid tokens.$color-accent-primary; outline-offset: calc(-1 * #{tokens.$border-width}); }
+}
+
+.sd-ai-work__section:not([open]) > summary::after { transform: rotate(-90deg); }
+
+.sd-ai-work__pagination {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: tokens.$space-3;
+  padding: tokens.$space-2 0;
+
+  button {
+    padding: tokens.$space-2 tokens.$space-3;
+    border: tokens.$border-width solid tokens.$color-border;
+    background: tokens.$color-bg-surface;
+    color: tokens.$color-text-primary;
+    font: inherit;
+    cursor: pointer;
+  }
+
+  button:disabled { cursor: not-allowed; opacity: 0.55; }
+}

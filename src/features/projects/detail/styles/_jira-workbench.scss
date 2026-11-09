@@ -1,0 +1,550 @@
+@use './mixins' as mixins;
+@use '../../../../shared/theme/sass-tokens' as tokens;
+
+.sd-detail__jira-workspace {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  gap: tokens.$space-4;
+}
+
+.sd-detail__analysis-workspace {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: tokens.$space-4;
+}
+
+.sd-detail__jira-analysis-workspace {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-4;
+}
+
+.sd-detail__analysis-list {
+  display: grid;
+  gap: tokens.$space-2;
+  margin: 0;
+  padding-left: tokens.$space-5;
+  color: tokens.$color-text-secondary;
+  font-size: tokens.$font-size-sm;
+}
+
+.sd-detail__analysis-empty {
+  margin-top: tokens.$space-4;
+  padding: tokens.$space-4;
+  border: tokens.$border-width dashed tokens.$color-border;
+  border-radius: tokens.$radius-md;
+  color: tokens.$color-text-muted;
+  font-size: tokens.$font-size-sm;
+}
+
+.sd-detail__analysis-empty--centered {
+  display: grid;
+  min-height: 18rem;
+  margin-top: 0;
+  place-items: center;
+  text-align: center;
+}
+
+.sd-detail__jira-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: tokens.$space-2;
+}
+
+.sd-detail__jira-pane-head {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-1;
+  padding-bottom: tokens.$space-3;
+  border-bottom: tokens.$border-width solid tokens.$color-border;
+}
+
+.sd-detail__jira-pane-title {
+  display: flex;
+  align-items: center;
+  gap: tokens.$space-2;
+}
+
+.sd-detail__jira-step-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  flex: 0 0 2rem;
+  border-radius: tokens.$radius-sm;
+  background-color: tokens.$color-accent-primary;
+  color: tokens.$color-accent-solid-fg;
+  font-size: tokens.$font-size-sm;
+  font-weight: 800;
+}
+
+.sd-detail__jira-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: tokens.$space-2;
+}
+
+.sd-detail__filter-pill {
+  padding: tokens.$space-1 tokens.$space-3;
+  border-radius: tokens.$radius-md;
+  border: tokens.$border-width solid tokens.$color-border;
+  background-color: tokens.$color-bg-surface;
+  color: tokens.$color-text-secondary;
+  font-size: tokens.$font-size-xs;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.sd-detail__filter-pill--active {
+  background-color: tokens.$color-accent-primary;
+  border-color: tokens.$color-accent-primary;
+  color: tokens.$color-accent-solid-fg;
+}
+
+.sd-detail__jira-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: tokens.$space-2;
+}
+
+.sd-detail__search-input {
+  @include mixins.detail-control;
+}
+
+.sd-detail__select {
+  @include mixins.detail-control;
+}
+
+.sd-detail__table-wrap {
+  overflow-x: auto;
+  border-radius: tokens.$radius-sm;
+  border: tokens.$border-width solid tokens.$color-border;
+  background-color: tokens.$color-bg-surface;
+}
+
+.sd-detail__jira-ticket-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr));
+  gap: tokens.$space-3;
+}
+
+.sd-detail__jira-ticket-card {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: tokens.$space-2;
+  padding: tokens.$space-3;
+  border: 1px solid tokens.$color-border;
+  border-left: 4px solid tokens.$color-border;
+  border-radius: tokens.$radius-md;
+  background: tokens.$color-bg-surface;
+  box-shadow: tokens.$shadow-card;
+}
+
+.sd-detail__jira-ticket-card--high { border-left-color: tokens.$color-status-err; }
+.sd-detail__jira-ticket-card--medium { border-left-color: tokens.$color-status-warn; }
+
+.sd-detail__jira-ticket-head,
+.sd-detail__jira-ticket-meta {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: tokens.$space-2;
+}
+
+.sd-detail__jira-ticket-head { justify-content: space-between; }
+
+.sd-detail__jira-ticket-meta {
+  color: tokens.$color-text-muted;
+  font-size: tokens.$font-size-2xs;
+}
+
+.sd-detail__jira-card-error,
+.sd-detail__jira-empty {
+  margin: 0;
+  color: tokens.$color-status-err;
+  font-size: tokens.$font-size-xs;
+}
+
+.sd-detail__jira-empty {
+  grid-column: 1 / -1;
+  color: tokens.$color-text-muted;
+}
+
+.sd-detail__jira-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: tokens.$font-size-xs;
+}
+
+.sd-detail__jira-table th {
+  text-align: left;
+  padding: tokens.$space-2 tokens.$space-3;
+  background-color: tokens.$color-bg-subtle;
+  color: tokens.$color-text-secondary;
+  font-weight: 700;
+  border-bottom: tokens.$border-width solid tokens.$color-border;
+}
+
+.sd-detail__jira-table td {
+  padding: tokens.$space-3;
+  border-bottom: tokens.$border-width solid tokens.$color-border;
+  vertical-align: middle;
+}
+
+.sd-detail__jira-table th:last-child,
+.sd-detail__jira-table td:last-child {
+  text-align: left;
+}
+
+.sd-detail__issue-key-button {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: tokens.$color-accent-ink;
+  font: inherit;
+  font-family: tokens.$font-mono;
+  font-weight: 700;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.sd-detail__jira-row--expanded td {
+  background-color: tokens.$color-accent-soft;
+}
+
+.sd-detail__jira-detail-row td {
+  padding-top: 0;
+  background-color: tokens.$color-accent-soft;
+}
+
+.sd-detail__jira-detail {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-2;
+  padding: tokens.$space-3;
+  border-left: 3px solid tokens.$color-accent-primary;
+  background-color: tokens.$color-bg-surface;
+}
+
+.sd-detail__jira-detail p {
+  margin: 0;
+  color: tokens.$color-text-secondary;
+  white-space: pre-wrap;
+}
+
+.sd-detail__jira-description {
+  max-height: 12rem;
+  overflow-y: auto;
+  padding: tokens.$space-2 tokens.$space-3;
+  border: tokens.$border-width solid tokens.$color-border;
+  background-color: tokens.$color-bg-subtle;
+}
+
+.sd-detail__jira-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.sd-detail__td-key {
+  white-space: nowrap;
+}
+
+.sd-detail__issue-key {
+  font-family: tokens.$font-mono;
+  font-weight: 700;
+  color: tokens.$color-accent-ink;
+  text-decoration: underline;
+}
+
+.sd-detail__ticket-title {
+  display: block;
+  font-size: tokens.$font-size-xs;
+  color: tokens.$color-text-primary;
+}
+
+.sd-detail__priority {
+  display: inline-flex;
+  align-items: center;
+  gap: tokens.$space-1;
+  padding: tokens.$space-1 tokens.$space-2;
+  border: tokens.$border-width solid transparent;
+  border-radius: tokens.$badge-radius;
+  background-color: tokens.$color-bg-subtle;
+  color: tokens.$color-text-secondary;
+  font-size: tokens.$font-size-xs;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.sd-detail__priority--high {
+  border-color: tokens.$color-status-err;
+  background-color: tokens.$color-status-err-bg;
+  color: tokens.$color-status-err;
+}
+
+.sd-detail__priority--medium {
+  border-color: tokens.$color-status-warn;
+  background-color: tokens.$color-status-warn-bg;
+  color: tokens.$color-status-warn;
+}
+
+.sd-detail__priority--low {
+  border-color: tokens.$color-border;
+  background-color: tokens.$color-bg-subtle;
+  color: tokens.$color-text-secondary;
+}
+
+.sd-detail__ticket-type {
+  display: inline-flex;
+  align-items: center;
+  gap: tokens.$space-1;
+  padding: tokens.$space-1 tokens.$space-2;
+  border: tokens.$border-width solid transparent;
+  border-radius: tokens.$badge-radius;
+  background-color: tokens.$color-bg-subtle;
+  color: tokens.$color-text-secondary;
+  font-size: tokens.$font-size-xs;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.sd-detail__ticket-type--story { border-color: tokens.$color-accent-primary; background-color: tokens.$color-accent-soft; color: tokens.$color-accent-ink; }
+.sd-detail__ticket-type--task { border-color: tokens.$color-status-info; background-color: tokens.$color-status-info-bg; color: tokens.$color-status-info; }
+.sd-detail__ticket-type--subtask { border-color: tokens.$color-status-ok; background-color: tokens.$color-status-ok-bg; color: tokens.$color-status-ok; }
+.sd-detail__ticket-type--bug { border-color: tokens.$color-status-err; background-color: tokens.$color-status-err-bg; color: tokens.$color-status-err; }
+
+.sd-detail__ticket-status {
+  display: inline-flex;
+  align-items: center;
+  gap: tokens.$space-1;
+  padding: tokens.$space-1 tokens.$space-2;
+  border: tokens.$border-width solid transparent;
+  border-radius: tokens.$badge-radius;
+  background-color: tokens.$color-bg-subtle;
+  color: tokens.$color-text-secondary;
+  font-size: tokens.$font-size-xs;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.sd-detail__ticket-status--qa { border-color: tokens.$color-status-ok; background-color: tokens.$color-status-ok-bg; color: tokens.$color-status-ok; }
+.sd-detail__ticket-status--in-progress { border-color: tokens.$color-status-info; background-color: tokens.$color-status-info-bg; color: tokens.$color-status-info; }
+.sd-detail__ticket-status--done { border-color: tokens.$color-status-ok; background-color: tokens.$color-status-ok-bg; color: tokens.$color-status-ok; }
+.sd-detail__ticket-status--pending { border-color: tokens.$color-status-warn; background-color: tokens.$color-status-warn-bg; color: tokens.$color-status-warn; }
+.sd-detail__ticket-status--default { border-color: tokens.$color-border; }
+
+.sd-detail__assignee {
+  display: inline-flex;
+  align-items: center;
+  gap: tokens.$space-2;
+  white-space: nowrap;
+}
+
+.sd-detail__assignee-avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: tokens.$radius-md;
+  background-color: tokens.$color-accent-soft;
+  color: tokens.$color-accent-ink;
+  font-size: tokens.$font-size-2xs;
+  font-weight: 700;
+}
+
+.sd-detail__dispatch-btn {
+  padding: tokens.$space-1 tokens.$space-3;
+  border-radius: tokens.$radius-sm;
+  border: tokens.$border-width solid tokens.$color-accent-primary;
+  background-color: tokens.$color-accent-soft;
+  color: tokens.$color-accent-ink;
+  font-size: tokens.$font-size-2xs;
+  font-weight: 700;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.sd-detail__jira-actions {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  gap: tokens.$space-2;
+}
+
+.sd-detail__jira-detail-btn {
+  padding: tokens.$space-1 tokens.$space-3;
+  border-radius: tokens.$radius-sm;
+  border: 1px solid #d8b4fe;
+  background-color: #f3e8ff;
+  color: #6b21a8;
+  font-size: tokens.$font-size-2xs;
+  font-weight: 700;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.sd-detail__dispatch-btn:hover {
+  background-color: tokens.$color-accent-primary;
+  color: tokens.$color-accent-solid-fg;
+}
+
+.sd-detail__dispatch-form {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-2;
+}
+
+.sd-detail__model-controls {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: tokens.$space-3;
+}
+
+.sd-detail__model-controls .sd-detail__field-label {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-1;
+}
+
+.sd-detail__model-note {
+  margin: 0;
+  color: tokens.$color-text-muted;
+  font-size: tokens.$font-size-2xs;
+}
+
+.sd-detail__prompt-template-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: tokens.$space-2;
+}
+
+.sd-detail__jira-action-btn {
+  max-width: 100%;
+  font-size: tokens.$font-size-xs;
+  overflow-wrap: anywhere;
+  text-align: center;
+  white-space: normal;
+}
+
+.sd-detail__analysis-action-btn,
+.sd-detail__analysis-workspace:not(.sd-detail__jira-analysis-workspace) .sd-detail__preview-actions .sd-detail__mini-btn {
+  font-size: 0.875rem;
+
+  &.sd-detail__mini-btn {
+    font-size: 0.875rem;
+  }
+}
+
+.sd-detail__prompt-template-bar .sd-detail__select {
+  min-width: min(100%, 18rem);
+  flex: 1 1 14rem;
+}
+
+.sd-detail__prompt-template-status {
+  color: tokens.$color-status-err;
+  font-size: tokens.$font-size-2xs;
+}
+
+.sd-detail__field-label {
+  font-size: tokens.$font-size-xs;
+  font-weight: 600;
+  color: tokens.$color-text-secondary;
+}
+
+.sd-detail__textarea {
+  width: 100%;
+  padding: tokens.$space-2 tokens.$space-3;
+  border-radius: tokens.$radius-sm;
+  border: tokens.$border-width solid tokens.$color-border;
+  background-color: tokens.$color-bg-surface;
+  color: tokens.$color-text-primary;
+  font-size: tokens.$font-size-xs;
+}
+
+.sd-detail__dispatch-preview {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-2;
+  padding: tokens.$space-3;
+  border-radius: tokens.$radius-sm;
+  border: tokens.$border-width solid tokens.$color-border;
+  background-color: tokens.$color-bg-surface;
+  font-size: tokens.$font-size-xs;
+}
+
+.sd-detail__preview-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: tokens.$space-2;
+}
+
+.sd-detail__preview-notice {
+  margin: 0;
+  padding: tokens.$space-2;
+  border-radius: tokens.$radius-sm;
+  background-color: tokens.$color-status-warn-bg;
+  color: tokens.$color-status-warn;
+  font-size: tokens.$font-size-2xs;
+}
+
+.sd-detail__preview-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: tokens.$space-2;
+}
+
+.sd-detail__preview-actions button:disabled,
+.sd-detail__confirm-start:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.sd-detail__dispatch-error {
+  margin: 0;
+  padding: tokens.$space-2 tokens.$space-3;
+  border: 1px solid tokens.$color-status-err;
+  border-radius: tokens.$radius-sm;
+  color: tokens.$color-status-err;
+  background: tokens.$color-status-err-bg;
+}
+
+.sd-detail__dispatch-job {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-2;
+  padding: tokens.$space-3;
+  border: 1px solid tokens.$color-border;
+  border-radius: tokens.$radius-sm;
+  background: tokens.$color-bg-subtle;
+}
+
+.sd-detail__dispatch-job-head,
+.sd-detail__confirm-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: tokens.$space-2;
+}
+
+.sd-detail__dispatch-output {
+  max-height: 24rem;
+  overflow: auto;
+  margin: 0;
+  padding: tokens.$space-3;
+  border-radius: tokens.$radius-sm;
+  background: #171923;
+  color: #f2f3f8;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font: tokens.$font-size-xs / 1.5 tokens.$font-mono;
+}

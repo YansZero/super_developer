@@ -1,0 +1,253 @@
+@media (max-width: 960px) {
+  .sd-overview__add-panel {
+    flex-direction: column;
+  }
+
+  .sd-overview__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .sd-overview__floating-add {
+    right: var(--sp-4);
+    bottom: var(--sp-4);
+  }
+}
+
+/* =========================================================================
+   1. RETRO 風格視窗卡片排版 (Windows 95 Inset Groupbox)
+   ========================================================================= */
+html[data-theme="retro"] .sd-overview__card {
+  border: var(--card-border-width) solid var(--card-border-color);
+  border-radius: 0;
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
+  box-shadow: var(--card-shadow);
+}
+
+html[data-theme="retro"] .sd-overview__card-head {
+  background: var(--bg-elevated);
+  border-bottom: 2px solid var(--border-color);
+  padding: var(--sp-2) var(--sp-3);
+  margin: calc(-1 * var(--sp-6)) calc(-1 * var(--sp-6)) var(--sp-2) calc(-1 * var(--sp-6));
+}
+
+html[data-theme="retro"] .sd-overview__card-title {
+  color: var(--accent-ink);
+  font-size: var(--fs-md);
+  font-weight: 700;
+}
+
+html[data-theme="retro"] .sd-overview__branch-pill {
+  border: 1px solid var(--border-color);
+  border-radius: 0;
+  background-color: var(--bg-subtle);
+  color: var(--text-primary);
+}
+
+html[data-theme="retro"] .sd-overview__integration-chip {
+  border: 1px solid var(--border-color);
+  border-radius: 0;
+  background-color: var(--bg-subtle);
+  color: var(--text-primary);
+}
+
+html[data-theme="retro"] .sd-overview__jira-preview {
+  border: 1px solid var(--border-color);
+  border-radius: 0;
+  background-color: #f8f8f8;
+}
+
+html[data-theme="retro"] .sd-overview__btn {
+  background-color: var(--bg-elevated);
+  color: var(--text-primary);
+  border: 2px solid var(--border-color);
+  border-radius: 0;
+}
+
+html[data-theme="retro"] .sd-overview__btn:active {
+  border-color: var(--accent-primary);
+}
+
+html[data-theme="retro"] .sd-overview__hero {
+  background-color: var(--bg-surface);
+  border: 2px solid var(--border-color);
+  padding: var(--sp-4);
+  color: var(--text-primary);
+}
+
+html[data-theme="retro"] .sd-overview__search-row {
+  background-color: var(--bg-elevated);
+  border: 2px solid var(--border-color);
+  border-radius: 0;
+}
+
+html[data-theme="retro"] .sd-overview__search-input {
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-subtle);
+  border-radius: 0;
+  color: var(--text-primary);
+}
+
+/* =========================================================================
+   2. ESPORTS 風格戰術矩陣排版 (Tactical Cyber Reticle & Chamfers)
+   ========================================================================= */
+html[data-theme="esports"] .sd-overview__card {
+  position: relative;
+  clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 0 100%);
+  border: var(--card-border-width) solid var(--card-border-color);
+  border-radius: 0;
+  background: var(--bg-surface);
+  box-shadow: var(--card-shadow);
+}
+
+html[data-theme="esports"] .sd-overview__card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid var(--accent-primary);
+  border-left: 2px solid var(--accent-primary);
+  pointer-events: none;
+}
+
+html[data-theme="esports"] .sd-overview__card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  border-bottom: 2px solid var(--accent-secondary);
+  border-right: 2px solid var(--accent-secondary);
+  pointer-events: none;
+}
+
+html[data-theme="esports"] .sd-overview__card-title {
+  letter-spacing: 0.05em;
+  text-shadow: none;
+}
+
+html[data-theme="esports"] .sd-overview__branch-pill {
+  border: 1px solid var(--card-border-color);
+  border-radius: 2px;
+  background-color: var(--accent-soft);
+  color: var(--text-secondary);
+}
+
+html[data-theme="esports"] .sd-overview__integration-chip {
+  border: 1px solid var(--card-border-color);
+  border-radius: 2px;
+  background-color: var(--accent-soft);
+  color: var(--text-secondary);
+}
+
+html[data-theme="esports"] .sd-overview__jira-preview {
+  border: 1px solid var(--card-border-color);
+  border-radius: 2px;
+  background-color: var(--bg-subtle);
+}
+
+html[data-theme="esports"] .sd-overview__btn {
+  clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%);
+  border-radius: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.2s;
+}
+
+html[data-theme="esports"] .sd-overview__btn:hover {
+  box-shadow: 0 2px 0 var(--theme-shadow);
+}
+
+html[data-theme="esports"] .sd-overview__hero {
+  border-bottom: 1px dashed var(--card-border-color);
+  padding-bottom: var(--sp-4);
+}
+
+/* =========================================================================
+   3. 8-BIT 風格冒險任務公會卡片 (Pixel RPG Guild Cards)
+   ========================================================================= */
+html[data-theme="8bit"] .sd-overview__card {
+  border: var(--card-border-width) solid var(--card-border-color);
+  box-shadow: var(--card-shadow);
+  border-radius: 0;
+  background-color: var(--bg-surface);
+}
+
+html[data-theme="8bit"] .sd-overview__card-title {
+  color: var(--accent-ink);
+  text-shadow: 2px 2px 0px var(--theme-shadow);
+  font-family: var(--font-sans);
+  font-size: var(--fs-sm);
+}
+
+html[data-theme="8bit"] .sd-overview__btn {
+  border: var(--card-border-width) solid var(--card-border-color);
+  box-shadow: var(--card-shadow);
+  border-radius: 0;
+  font-family: var(--font-sans);
+}
+
+html[data-theme="8bit"] .sd-overview__btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px var(--theme-shadow);
+}
+
+html[data-theme="8bit"] .sd-overview__search-row {
+  border: var(--card-border-width) solid var(--card-border-color);
+  box-shadow: var(--card-shadow);
+  border-radius: 0;
+}
+
+/* =========================================================================
+   4. MODERN 風格 SaaS 協作卡片 (Modern Clean SaaS Cards)
+   ========================================================================= */
+html[data-theme="modern"] .sd-overview__card {
+  border-radius: 16px;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 8px 24px rgba(0, 0, 0, 0.03);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+html[data-theme="modern"] .sd-overview__card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.06), 0 12px 28px rgba(0, 0, 0, 0.08);
+}
+
+html[data-theme="modern"] .sd-overview__btn {
+  border-radius: 10px;
+}
+
+/* Greeting banner themes */
+html[data-theme="esports"] .sd-overview__greeting-banner,
+html[data-theme="8bit"] .sd-overview__greeting-banner {
+  border: var(--card-border-width) solid var(--card-border-color);
+  border-left: 4px solid var(--accent-primary);
+  border-radius: 0;
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  box-shadow: var(--card-shadow);
+}
+
+html[data-theme="esports"] .sd-overview__greeting-message,
+html[data-theme="8bit"] .sd-overview__greeting-message {
+  color: var(--text-primary);
+}
+
+html[data-theme="retro"] .sd-overview__greeting-banner {
+  border: 2px solid var(--border-color);
+  border-radius: 0;
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  box-shadow: var(--card-shadow);
+}
+
+html[data-theme="retro"] .sd-overview__greeting-clock {
+  border: 1px solid var(--border-color);
+  border-radius: 0;
+  background-color: var(--bg-elevated);
+}
+

@@ -1,0 +1,74 @@
+.sd-running-animal {
+  display: block;
+  width: 64px;
+  height: 40px;
+  overflow: visible;
+  --animal-step: 0.56s;
+}
+
+.sd-running-animal--animated .sd-running-animal__body {
+  animation: sd-animal-bounce var(--animal-step) linear infinite;
+}
+
+.sd-running-animal--animated .sd-running-animal__leg {
+  animation: sd-animal-stride var(--animal-step) linear var(--leg-delay, 0s) infinite;
+}
+
+.sd-running-animal__leg--hind {
+  transform-origin: 23px 25px;
+  --leg-delay: calc(var(--animal-step) / -2);
+}
+
+.sd-running-animal__leg--fore {
+  transform-origin: 43px 25px;
+}
+
+.sd-running-animal__leg--hind.sd-running-animal__leg--far {
+  --leg-delay: 0s;
+}
+
+.sd-running-animal__leg--fore.sd-running-animal__leg--far {
+  --leg-delay: calc(var(--animal-step) / -2);
+}
+
+.sd-running-animal--animated .sd-running-animal__tail {
+  transform-origin: 19px 23px;
+  animation: sd-animal-tail 1.12s ease-in-out infinite alternate;
+}
+
+.sd-running-animal--rabbit { --animal-step: 0.64s; }
+.sd-running-animal--rabbit.sd-running-animal--animated .sd-running-animal__body {
+  animation-name: sd-animal-hop;
+}
+.sd-running-animal--rabbit.sd-running-animal--animated .sd-running-animal__leg {
+  animation-name: sd-animal-hop-legs;
+  --leg-delay: 0s;
+}
+
+@keyframes sd-animal-bounce {
+  0%, 50%, 100% { transform: translateY(0); }
+  25%, 75% { transform: translateY(-1px); }
+}
+@keyframes sd-animal-stride {
+  0%, 100% { transform: rotate(-24deg); }
+  50% { transform: rotate(24deg); }
+  75% { transform: translateY(-2px) rotate(0deg); }
+}
+@keyframes sd-animal-tail {
+  from { transform: rotate(-4deg); }
+  to { transform: rotate(4deg); }
+}
+@keyframes sd-animal-hop {
+  0%, 100% { transform: translateY(0); }
+  45% { transform: translateY(-4px); }
+  80% { transform: translateY(-1px); }
+}
+@keyframes sd-animal-hop-legs {
+  0%, 100% { transform: rotate(-12deg); }
+  45% { transform: rotate(22deg); }
+  80% { transform: rotate(-20deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sd-running-animal.sd-running-animal--animated * { animation: none; }
+}

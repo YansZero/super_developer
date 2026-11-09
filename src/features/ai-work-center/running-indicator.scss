@@ -1,0 +1,24 @@
+@use '../../shared/theme/sass-tokens' as tokens;
+
+.sd-ai-work__job-status--running {
+  display: inline-flex;
+  align-items: center;
+  gap: tokens.$space-2;
+
+  &::before {
+    content: '';
+    width: tokens.$space-2;
+    height: tokens.$space-2;
+    border-radius: 50%;
+    background: tokens.$color-status-ok;
+    animation: sd-ai-work-running-pulse 1.2s ease-in-out infinite;
+  }
+}
+
+@keyframes sd-ai-work-running-pulse {
+  50% { opacity: 0.35; transform: scale(0.75); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sd-ai-work__job-status--running::before { animation: none; }
+}

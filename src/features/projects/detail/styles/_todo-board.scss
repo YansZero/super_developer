@@ -1,0 +1,417 @@
+@use "../../../../shared/theme/sass-tokens" as tokens;
+
+.sd-detail__todo-groups {
+  border: tokens.$border-width solid tokens.$color-border;
+  background: tokens.$color-bg-surface;
+}
+
+.sd-detail__todo-source-summary {
+  display: flex;
+  align-items: center;
+  gap: tokens.$space-3;
+  padding: tokens.$space-2 tokens.$space-3;
+  border: 0;
+  background-color: tokens.$color-bg-subtle;
+  color: tokens.$color-text-primary;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.sd-detail__todo-source-summary::marker {
+  color: tokens.$color-accent-primary;
+}
+
+.sd-detail__todo-list {
+  list-style: none;
+  margin: 0;
+  padding: tokens.$space-3;
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-2;
+}
+
+.sd-detail__todo-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: tokens.$space-2;
+  padding: tokens.$space-2 tokens.$space-3;
+  border-radius: tokens.$radius-sm;
+  border: tokens.$border-width solid tokens.$color-border;
+  background-color: tokens.$color-bg-surface;
+  font-size: tokens.$font-size-xs;
+}
+
+.sd-detail__todo-item--done {
+  background-color: tokens.$color-bg-subtle;
+}
+
+.sd-detail__todo-main {
+  display: flex;
+  align-items: center;
+  gap: tokens.$space-2;
+  min-width: 0;
+  width: 100%;
+}
+
+.sd-detail__todo-progress-actions {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: tokens.$space-3;
+}
+
+.sd-detail__todo-progress-actions > .sd-detail__todo-groups,
+.sd-detail__todo-progress-actions > .sd-detail__todo-not-prepared {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.sd-detail__todo-title {
+  display: inline-flex;
+  align-items: center;
+  gap: tokens.$space-2;
+  min-width: 0;
+  color: inherit;
+  text-align: left;
+  font: inherit;
+}
+
+.sd-detail__todo-actions {
+  display: flex;
+  align-items: center;
+  gap: tokens.$space-2;
+  justify-content: flex-start;
+  padding: tokens.$space-2 0;
+  border-top: tokens.$border-width solid tokens.$color-border;
+}
+
+.sd-detail__todo-not-prepared {
+  padding: tokens.$space-3 0;
+  color: tokens.$color-text-secondary;
+  font-size: tokens.$font-size-xs;
+}
+
+.sd-detail__todo-count {
+  color: tokens.$color-text-secondary;
+  font-size: tokens.$font-size-2xs;
+}
+
+.sd-detail__todo-locked {
+  color: tokens.$color-status-ok;
+  font-size: tokens.$font-size-2xs;
+  font-weight: 600;
+}
+
+.sd-detail__todo-status {
+  margin-left: auto;
+  color: tokens.$color-text-secondary;
+  font-size: tokens.$font-size-2xs;
+  white-space: nowrap;
+}
+
+.sd-detail__todo-document {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-1;
+  margin: tokens.$space-2 0;
+  color: tokens.$color-text-secondary;
+}
+
+.sd-detail__todo-document-list {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-1;
+}
+
+.sd-detail__todo-document-list ul {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-1;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sd-detail__todo-document-tab {
+  width: 100%;
+  padding: tokens.$space-2 tokens.$space-3;
+  border: tokens.$border-width solid tokens.$color-border;
+  background-color: tokens.$color-bg-surface;
+  color: tokens.$color-text-primary;
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+}
+
+.sd-detail__todo-document-tab[aria-pressed='true'] {
+  border-color: tokens.$color-accent-primary;
+  background-color: tokens.$color-accent-soft;
+  color: tokens.$color-accent-ink;
+  font-weight: 600;
+}
+
+.sd-detail__todo-document > span {
+  display: block;
+  font-size: tokens.$font-size-2xs;
+}
+
+.sd-detail__todo-document .sd-detail__saved-architecture-output {
+  max-height: 280px;
+  margin: 0;
+  padding: tokens.$space-3;
+  overflow: auto;
+  font-size: calc(tokens.$font-size-xs + 0.5rem);
+}
+
+.sd-detail__todo-document .sd-detail__markdown-task {
+  display: flex;
+  align-items: flex-start;
+  gap: tokens.$space-2;
+}
+
+.sd-detail__todo-document .sd-detail__markdown-task input {
+  flex: 0 0 auto;
+  margin-top: 0.25em;
+}
+
+.sd-detail__mini-btn {
+  padding: tokens.$space-1 tokens.$space-3;
+  border-radius: tokens.$radius-sm;
+  border: tokens.$border-width solid tokens.$color-border;
+  background-color: tokens.$color-bg-surface;
+  color: tokens.$color-accent-ink;
+  font-size: tokens.$font-size-2xs;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.sd-detail__mini-btn:not(:disabled):hover {
+  border-color: tokens.$color-accent-primary;
+  background-color: tokens.$color-accent-soft;
+}
+
+.sd-detail__missing-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: tokens.$space-2;
+  padding: tokens.$space-4;
+  border-radius: tokens.$radius-sm;
+  border: tokens.$border-width solid tokens.$color-status-warn;
+  background-color: tokens.$color-status-warn-bg;
+  font-size: tokens.$font-size-xs;
+}
+
+.sd-detail__missing-card p {
+  margin: 0;
+  color: tokens.$color-text-secondary;
+}
+
+.sd-detail__progress-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: tokens.$space-4;
+}
+
+.sd-detail__progress-board .sd-detail__mini-btn {
+  padding: calc(tokens.$space-1 + 0.25rem) calc(tokens.$space-3 + 0.25rem);
+  font-size: tokens.$font-size-md;
+}
+
+.sd-detail__progress-board .sd-detail__mini-btn:disabled {
+  color: tokens.$color-text-secondary;
+  background-color: tokens.$color-bg-subtle;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.sd-detail__progress-summary {
+  display: flex;
+  align-items: center;
+  gap: tokens.$space-3;
+  cursor: pointer;
+}
+
+.sd-detail__progress-summary::after,
+.sd-detail__todo-source-summary::after {
+  content: '';
+  flex: 0 0 auto;
+  width: 0.4rem;
+  height: 0.4rem;
+  margin-inline: auto tokens.$space-1;
+  border: solid currentColor;
+  border-width: 0 2px 2px 0;
+  color: tokens.$color-accent-ink;
+  transform: rotate(45deg);
+}
+
+details:not([open]) > :is(.sd-detail__progress-summary, .sd-detail__todo-source-summary)::after {
+  transform: rotate(-45deg);
+}
+
+.sd-detail__progress-stats {
+  display: flex;
+  margin-block-end: tokens.$space-3;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: tokens.$space-4;
+  padding: tokens.$space-3;
+  border: tokens.$border-width solid tokens.$color-border;
+  background: tokens.$color-bg-surface;
+  color: tokens.$color-text-secondary;
+  overflow-wrap: anywhere;
+}
+
+.sd-detail__progress-stats strong {
+  color: tokens.$color-text-primary;
+}
+
+.sd-detail__progress-source {
+  flex: 1 1 16rem;
+  min-width: 0;
+}
+
+.sd-detail__progress-stats progress {
+  flex: 1 1 8rem;
+  max-width: 16rem;
+  height: tokens.$space-2;
+  appearance: none;
+  border: 0;
+  background: tokens.$color-accent-soft;
+}
+
+.sd-detail__progress-stats progress::-webkit-progress-bar {
+  background: tokens.$color-accent-soft;
+}
+
+.sd-detail__progress-stats progress::-webkit-progress-value {
+  background: tokens.$color-accent-primary;
+}
+
+.sd-detail__progress-stats progress::-moz-progress-bar {
+  background: tokens.$color-accent-primary;
+}
+
+.sd-detail__progress-buttons {
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.sd-detail__progress-job-link {
+  margin-inline-end: auto;
+  text-decoration: none;
+}
+
+.sd-detail__completed-job {
+  overflow-wrap: anywhere;
+}
+
+.sd-detail__completed-job-actions {
+  display: flex;
+  flex-basis: 100%;
+}
+
+.sd-detail__todo-document.sd-detail__document-body {
+  margin: 0;
+  padding: tokens.$space-3;
+}
+
+.sd-detail__progress-empty {
+  margin-inline-start: auto;
+  color: tokens.$color-text-secondary;
+}
+
+.sd-detail__document-header {
+  display: flex;
+  justify-content: flex-end;
+  padding-block: tokens.$space-2;
+  border-bottom: tokens.$border-width solid tokens.$color-border;
+}
+
+.sd-detail__document-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  gap: tokens.$space-3;
+  padding-top: 0.5rem;
+}
+
+.sd-detail__completed-section {
+  margin-top: tokens.$space-4;
+  padding-top: tokens.$space-4;
+  border-top: tokens.$border-width solid tokens.$color-border;
+}
+
+.sd-detail__completed-section > h2 {
+  margin-bottom: tokens.$space-4;
+}
+
+.sd-detail__completed-content {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-3;
+  padding: tokens.$space-3;
+}
+
+.sd-detail__completed-content p {
+  margin: 0;
+  color: tokens.$color-text-secondary;
+}
+
+.sd-detail__completed-content .sd-detail__todo-document {
+  padding: 0 tokens.$space-3 tokens.$space-3;
+}
+
+.sd-detail__implementation-dialog {
+  max-height: 90vh;
+  overflow: auto;
+}
+
+.sd-detail__implementation-header {
+  margin: calc(-1 * tokens.$space-5) calc(-1 * tokens.$space-5) 0;
+  padding: tokens.$space-5;
+  border-bottom: tokens.$border-width solid tokens.$color-border;
+  background: tokens.$color-bg-subtle;
+}
+
+.sd-detail__implementation-header h2 {
+  font-size: tokens.$font-size-lg;
+}
+
+.sd-detail__confirm-cancel {
+  padding: tokens.$space-2 tokens.$space-4;
+  border: tokens.$border-width solid tokens.$color-border;
+  border-radius: tokens.$radius-sm;
+  background: tokens.$color-bg-surface;
+  color: tokens.$color-accent-ink;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.sd-detail__confirm-cancel:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.sd-detail__implementation-dialog .sd-detail__confirm-actions button {
+  min-width: 8rem;
+}
+
+.sd-detail__implementation-dialog .sd-detail__field-label,
+.sd-detail__implementation-source {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-2;
+}
+
+.sd-detail__implementation-dialog textarea {
+  width: 100%;
+  min-height: 12rem;
+  resize: vertical;
+}
+
+@media (max-width: 768px) {
+  .sd-detail__document-content { grid-template-columns: minmax(0, 1fr); }
+}

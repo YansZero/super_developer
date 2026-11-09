@@ -1,0 +1,154 @@
+.sd-integrations__info-banner {
+  padding: var(--sp-2) var(--sp-3);
+  border-radius: var(--radius-sm);
+  background-color: var(--accent-soft);
+  color: var(--accent-ink);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+}
+
+.sd-integrations__jira-warning {
+  padding: var(--sp-3) var(--sp-4);
+  border: var(--border-width) solid var(--status-err);
+  border-radius: var(--radius-sm);
+  background-color: var(--status-err-bg);
+  color: var(--status-err);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+}
+
+.sd-integrations__mapping-header {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--sp-2) var(--sp-3);
+  border-radius: var(--radius-sm);
+  background-color: var(--bg-elevated);
+  color: var(--text-secondary);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+}
+
+.sd-integrations__mapping-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.sd-integrations__mapping-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-2);
+  padding: var(--sp-3);
+  border-radius: var(--radius-sm);
+  border: var(--border-width) solid var(--border-color);
+  background-color: var(--bg-surface);
+  font-size: var(--fs-xs);
+}
+
+.sd-integrations__mapping-folder {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.sd-integrations__mapping-folder-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--sp-1);
+}
+
+.sd-integrations__folder-glyph {
+  display: inline-flex;
+  align-items: center;
+  color: var(--accent-primary);
+}
+
+.sd-integrations__svg-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.sd-integrations__mapping-select-box {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: var(--sp-1) var(--sp-3);
+  border-radius: var(--radius-sm);
+  border: var(--border-width) solid var(--border-color);
+  background-color: var(--bg-subtle);
+}
+
+.sd-integrations__mapping-form {
+  display: grid;
+  grid-template-columns: minmax(120px, 0.8fr) minmax(160px, 1fr) auto;
+  align-items: center;
+  gap: var(--sp-2);
+  min-width: min(100%, 560px);
+}
+
+.sd-integrations__mapping-message {
+  grid-column: 1 / -1;
+  color: var(--text-secondary);
+  font-size: var(--fs-2xs);
+}
+
+.sd-integrations__jira-mark {
+  width: 16px;
+  height: 16px;
+  color: var(--accent-primary);
+  flex-shrink: 0;
+}
+
+.sd-integrations__proj-name {
+  font-weight: 600;
+}
+
+.sd-integrations__card--jira-assignments {
+  font-size: var(--fs-md);
+}
+
+.sd-integrations__card--jira-assignments .sd-integrations__card-title,
+.sd-integrations__card--jira-assignments .sd-integrations__proj-name {
+  font-size: var(--fs-xl);
+}
+
+.sd-integrations__card--jira-assignments .sd-integrations__subtext,
+.sd-integrations__card--jira-assignments .sd-integrations__mapping-header,
+.sd-integrations__card--jira-assignments .sd-integrations__mapping-item,
+.sd-integrations__card--jira-assignments .sd-integrations__mapping-item .sd-integrations__btn,
+.sd-integrations__card--jira-assignments .sd-jira-task-picker__toolbar,
+.sd-integrations__card--jira-assignments .sd-jira-task-picker__message,
+.sd-integrations__card--jira-assignments .sd-jira-task-picker__assigned-list {
+  font-size: var(--fs-md);
+}
+
+.sd-integrations__card--jira-assignments > .sd-badge {
+  font-size: var(--fs-md);
+}
+
+.sd-integrations__branch-context {
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: var(--fs-2xs);
+}
+
+.sd-integrations__proj-target {
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+}
+
+.sd-integrations__notice--ok {
+  border-color: var(--status-ok);
+  background-color: var(--status-ok-bg);
+}
+
+.sd-integrations__notice--warn {
+  border-color: var(--status-warn);
+  background-color: var(--status-warn-bg);
+}

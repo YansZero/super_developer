@@ -1,0 +1,89 @@
+@use "../../../../shared/theme/sass-tokens" as tokens;
+
+.sd-detail__confirm-backdrop {
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: tokens.$space-4;
+}
+
+.sd-detail__confirm-backdrop,
+.sd-project-workspace__agent-job-dialog::backdrop {
+  background: rgb(20 22 35 / 56%);
+}
+
+.sd-detail__confirm-dialog {
+  display: flex;
+  width: min(42rem, 100%);
+  max-height: min(90vh, 52rem);
+  flex-direction: column;
+  gap: tokens.$space-3;
+  overflow: auto;
+  padding: tokens.$space-5;
+  border: 1px solid tokens.$color-border;
+  border-radius: tokens.$radius-lg;
+  background: tokens.$color-bg-surface;
+  box-shadow: 0 24px 60px rgb(20 22 35 / 20%);
+}
+
+.sd-detail__confirm-dialog h2,
+.sd-detail__confirm-dialog p {
+  margin: 0;
+}
+
+.sd-detail__confirm-dialog > p,
+.sd-detail__confirm-prompt {
+  color: tokens.$color-text-secondary;
+  font-size: tokens.$font-size-xs;
+}
+
+.sd-detail__confirm-dialog dl {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: tokens.$space-2 tokens.$space-4;
+  margin: 0;
+  padding: tokens.$space-3;
+  border-radius: tokens.$radius-sm;
+  background: tokens.$color-bg-subtle;
+  font-size: tokens.$font-size-xs;
+}
+
+.sd-detail__confirm-dialog dl div {
+  display: contents;
+}
+
+.sd-detail__confirm-dialog dt {
+  color: tokens.$color-text-muted;
+}
+
+.sd-detail__confirm-dialog dd {
+  min-width: 0;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.sd-detail__confirm-dialog pre {
+  max-height: 16rem;
+  overflow: auto;
+  margin: 0;
+  padding: tokens.$space-3;
+  border: 1px solid tokens.$color-border;
+  border-radius: tokens.$radius-sm;
+  background: tokens.$color-bg-subtle;
+  color: tokens.$color-text-primary;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font: tokens.$font-size-xs / 1.5 tokens.$font-mono;
+}
+
+.sd-detail__confirm-start {
+  padding: tokens.$space-2 tokens.$space-4;
+  border: 1px solid tokens.$color-accent-primary;
+  border-radius: tokens.$radius-sm;
+  background: tokens.$color-accent-primary;
+  color: tokens.$color-accent-solid-fg;
+  font-weight: 700;
+  cursor: pointer;
+}

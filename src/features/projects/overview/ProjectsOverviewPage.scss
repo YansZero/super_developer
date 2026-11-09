@@ -1,0 +1,23 @@
+@use '../../../shared/theme/sass-tokens' as tokens;
+
+.sd-overview__sort {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+
+  span { color: tokens.$color-accent-ink; }
+  &:focus-visible { outline: tokens.$border-width solid tokens.$color-accent-primary; }
+}
+
+.sd-overview__pagination {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: tokens.$space-3;
+  padding: tokens.$space-3 tokens.$space-4;
+
+  button:disabled { cursor: not-allowed; opacity: 0.55; }
+}

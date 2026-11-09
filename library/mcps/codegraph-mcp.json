@@ -1,0 +1,13 @@
+{
+  "name": "codegraph-mcp",
+  "description": "Provides local code knowledge graph and AST indexing for call hierarchy tracing and impact analysis | 提供本地程式碼知識圖譜與 AST 索引，支援呼叫鏈追蹤與改動影響範圍分析",
+  "transport": "stdio",
+  "command": "codegraph",
+  "args": [
+    "serve",
+    "--mcp"
+  ],
+  "url": null,
+  "env": {},
+  "headers": {}
+}

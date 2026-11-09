@@ -1,0 +1,28 @@
+@use "../../../../shared/theme/sass-tokens" as tokens;
+
+@media (max-width: tokens.$breakpoint-tablet-landscape) {
+  .sd-detail__branch-header,
+  .sd-detail__dual-grid,
+  .sd-detail__spec-arch-grid,
+  .sd-detail__spec-files-layout,
+  .sd-detail__jira-workspace,
+  .sd-detail__analysis-workspace {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .sd-detail__jira-ticket-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: tokens.$breakpoint-tablet) {
+  .sd-detail__model-controls {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: tokens.$breakpoint-mobile) {
+  .sd-detail__branch-header,
+  .sd-detail__section {
+    padding: tokens.$space-4;
+  }
+}

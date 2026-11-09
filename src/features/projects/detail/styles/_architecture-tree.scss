@@ -1,0 +1,78 @@
+@use "../../../../shared/theme/sass-tokens" as tokens;
+
+.sd-detail__tree-list {
+  list-style: none;
+  margin: 0;
+  padding-left: tokens.$space-4;
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-1;
+}
+
+.sd-detail__tree-item {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-1;
+}
+
+.sd-detail__tree-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: tokens.$space-2;
+}
+
+.sd-detail__tree-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: tokens.$space-1;
+  padding: tokens.$space-1 tokens.$space-2;
+  border-radius: tokens.$radius-sm;
+  border: tokens.$border-width solid tokens.$color-border;
+  background-color: tokens.$color-bg-surface;
+  color: tokens.$color-text-primary;
+  font-family: tokens.$font-mono;
+  font-size: tokens.$font-size-xs;
+  cursor: pointer;
+}
+
+.sd-detail__tree-caret {
+  color: tokens.$color-text-muted;
+}
+
+.sd-detail__tree-file {
+  display: inline-flex;
+  align-items: center;
+  gap: tokens.$space-1;
+  font-family: tokens.$font-mono;
+  font-size: tokens.$font-size-xs;
+  color: tokens.$color-text-primary;
+}
+
+.sd-detail__glyph {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.sd-detail__glyph--folder {
+  color: tokens.$color-accent-primary;
+}
+
+.sd-detail__glyph--file {
+  color: tokens.$color-text-secondary;
+}
+
+.sd-detail__tree-note {
+  font-size: tokens.$font-size-2xs;
+  color: tokens.$color-text-muted;
+}
+
+.sd-detail__notice {
+  padding: tokens.$space-3;
+  border-radius: tokens.$radius-sm;
+  border: tokens.$border-width solid tokens.$color-status-warn;
+  background-color: tokens.$color-status-warn-bg;
+  font-size: tokens.$font-size-xs;
+  color: tokens.$color-text-primary;
+}

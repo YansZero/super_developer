@@ -1,0 +1,291 @@
+.sd-shell__retro-titlebar {
+  display: var(--win95-chrome-display, none);
+  align-items: center;
+  justify-content: space-between;
+  background: var(--bg-surface);
+  color: var(--accent-primary);
+  padding: 4px 8px;
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  user-select: none;
+}
+
+.sd-shell__retro-titlebar-main {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.sd-shell__retro-titlebar-icon {
+  font-size: var(--fs-sm);
+}
+
+.sd-shell__retro-titlebar-text {
+  letter-spacing: 0.04em;
+}
+
+.sd-shell__retro-titlebar-actions {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.sd-shell__retro-sysbtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 14px;
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+  border-top: 1px solid var(--theme-bevel-light);
+  border-left: 1px solid var(--theme-bevel-light);
+  border-right: 1px solid var(--theme-bevel-dark);
+  border-bottom: 1px solid var(--theme-bevel-dark);
+  font-size: var(--fs-2xs);
+  font-weight: 700;
+  line-height: 1;
+  padding: 0;
+  cursor: pointer;
+}
+
+.sd-shell__retro-sysbtn:active {
+  border-top: 1px solid var(--theme-bevel-dark);
+  border-left: 1px solid var(--theme-bevel-dark);
+  border-right: 1px solid var(--theme-bevel-light);
+  border-bottom: 1px solid var(--theme-bevel-light);
+}
+
+.sd-shell__retro-menubar {
+  display: var(--win95-chrome-display, none);
+  align-items: center;
+  gap: var(--sp-4);
+  padding: 4px var(--sp-3);
+  background-color: var(--bg-elevated);
+  border-bottom: 1px solid var(--border-color);
+  font-size: var(--fs-xs);
+  color: var(--text-primary);
+  user-select: none;
+}
+
+.sd-shell__retro-menu-item {
+  padding: 2px 6px;
+  cursor: pointer;
+}
+
+.sd-shell__retro-menu-item:hover {
+  background-color: var(--accent-soft);
+  color: var(--accent-ink);
+}
+
+.sd-shell__retro-statusbar {
+  display: var(--win95-chrome-display, none);
+  align-items: center;
+  gap: 2px;
+  padding: 2px var(--sp-2);
+  background-color: var(--bg-elevated);
+  border-top: 1px solid var(--border-color);
+  font-size: var(--fs-xs);
+  color: var(--text-primary);
+  user-select: none;
+}
+
+.sd-shell__retro-status-cell {
+  padding: 2px 8px;
+  border-top: 1px solid var(--border-color);
+  border-left: 1px solid var(--border-color);
+  border-right: 1px solid var(--theme-bevel-light);
+  border-bottom: 1px solid var(--theme-bevel-light);
+  background-color: var(--bg-elevated);
+  font-size: var(--fs-2xs);
+}
+
+.sd-shell__retro-status-cell--main {
+  flex: 1;
+}
+
+html[data-theme="retro"] .sd-shell {
+  background-color: var(--bg-canvas);
+  padding: var(--sp-2);
+}
+
+html[data-theme="retro"] .sd-shell__body {
+  background-color: var(--bg-surface);
+  border: 2px solid var(--border-color);
+  box-shadow: 4px 4px 0 var(--theme-shadow);
+}
+
+html[data-theme="retro"] .sd-shell__sidebar {
+  background-color: var(--bg-surface);
+  border-right: 2px solid var(--border-color);
+}
+
+html[data-theme="retro"] .sd-shell__nav-btn {
+  border-radius: 0;
+  background-color: var(--bg-surface);
+  border: 2px solid transparent;
+  color: var(--text-secondary);
+  font-weight: 700;
+}
+
+html[data-theme="retro"] .sd-shell__nav-btn--active {
+  background-color: var(--accent-soft);
+  color: var(--accent-ink);
+  border-color: var(--accent-primary);
+}
+
+html[data-theme="retro"] .sd-shell__nav-btn:active {
+  border-color: var(--accent-primary);
+}
+
+html[data-theme="retro"] .sd-shell__main {
+  background-color: var(--bg-canvas);
+  border: 2px solid var(--border-color);
+  margin: var(--sp-2);
+}
+
+/* =========================================================================
+   2. ESPORTS 風格組件 (賽博戰況 HUD / 戰鬥控制台)
+   ========================================================================= */
+.sd-shell__esports-hud {
+  display: var(--hud-chrome-display, none);
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--sp-2) var(--sp-4);
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--accent-primary);
+  box-shadow: none;
+  color: var(--accent-primary);
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.1em;
+}
+
+.sd-shell__esports-hud-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.sd-shell__esports-hud-badge {
+  background: var(--accent-secondary);
+  color: var(--accent-solid-fg);
+  font-weight: 700;
+  font-size: var(--fs-2xs);
+  padding: 2px 6px;
+  clip-path: polygon(4px 0, 100% 0, calc(100% - 4px) 100%, 0 100%);
+  box-shadow: none;
+}
+
+.sd-shell__esports-hud-name {
+  font-weight: 700;
+  text-shadow: none;
+}
+
+.sd-shell__esports-hud-telemetry {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  font-family: var(--font-mono);
+  font-size: var(--fs-2xs);
+}
+
+.sd-shell__esports-hud-metric {
+  color: var(--text-secondary);
+}
+
+.sd-shell__esports-hud-metric--alert {
+  color: var(--accent-secondary);
+  font-weight: 700;
+}
+
+html[data-theme="esports"] .sd-shell__sidebar {
+  clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 0 100%);
+  border-right: 1px solid var(--border-color);
+  box-shadow: none;
+}
+
+html[data-theme="esports"] .sd-shell__nav-btn {
+  clip-path: polygon(6px 0, 100% 0, calc(100% - 6px) 100%, 0 100%);
+  border-left: 3px solid transparent;
+  border-radius: 0;
+  letter-spacing: 0.05em;
+  transition: all 0.15s ease-in-out;
+}
+
+html[data-theme="esports"] .sd-shell__nav-btn:hover {
+  background: var(--accent-soft);
+  border-left-color: var(--accent-primary);
+}
+
+html[data-theme="esports"] .sd-shell__nav-btn--active {
+  background: var(--accent-soft);
+  border-left-color: var(--accent-primary);
+  color: var(--text-primary);
+  text-shadow: none;
+}
+
+/* =========================================================================
+   3. 8-BIT 風格組件 (點陣冒險公會 / 街機遊戲舞台)
+   ========================================================================= */
+.sd-shell__8bit-header {
+  display: var(--pixel-cursor-display, none);
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--sp-2) var(--sp-4);
+  background-color: var(--bg-surface);
+  border-bottom: 4px solid var(--card-border-color);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.05em;
+  user-select: none;
+}
+
+.sd-shell__8bit-header-left {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  color: var(--accent-ink);
+}
+
+.sd-shell__8bit-star {
+  color: var(--accent-primary);
+}
+
+.sd-shell__8bit-header-right {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  color: var(--status-ok);
+  font-size: var(--fs-2xs);
+}
+
+html[data-theme="8bit"] .sd-shell__sidebar {
+  border-right: 4px solid var(--card-border-color);
+  background-color: var(--bg-surface);
+}
+
+html[data-theme="8bit"] .sd-shell__nav-btn {
+  border: 2px solid transparent;
+  border-radius: 0;
+  font-family: var(--font-sans);
+}
+
+html[data-theme="8bit"] .sd-shell__nav-btn--active {
+  border: 2px solid var(--accent-primary);
+  background-color: var(--bg-elevated);
+  color: var(--accent-ink);
+  box-shadow: 2px 2px 0px var(--theme-shadow);
+}
+
+html[data-theme="8bit"] .sd-shell__nav-btn--active .sd-shell__nav-item-main::before {
+  content: "▶ ";
+  color: var(--accent-primary);
+  margin-right: 4px;
+}
+
+html[data-theme="8bit"] .sd-shell__nav-btn:active {
+  transform: translate(2px, 2px);
+}

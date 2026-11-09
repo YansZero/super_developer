@@ -1,0 +1,51 @@
+@use "../../../shared/theme/sass-tokens" as tokens;
+
+.sd-agent-task-mark {
+  flex: 0 0 1rem;
+  color: tokens.$color-status-ok;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+
+  &--error { color: tokens.$color-status-err; }
+}
+
+.sd-agent-progress {
+  min-width: 0;
+  margin-block: 1rem;
+  font-size: 0.875rem;
+  color: tokens.$color-text-primary;
+  overflow-wrap: anywhere;
+  &__stats { display: flex; align-items: center; flex-wrap: wrap; gap: 0.75rem; padding: 0.75rem; border: tokens.$border-width solid tokens.$color-border; }
+  &__steps {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(0, 1fr);
+    flex-basis: 100%;
+    height: 0.625rem;
+
+    > span { background-color: tokens.$color-border; }
+    > span[data-filled='true'] { background-color: tokens.$color-accent-primary; }
+
+    @media (prefers-reduced-motion: no-preference) {
+      > span { transition: background-color 180ms ease-out; }
+    }
+  }
+  &__running { margin-block: 0.75rem; padding: 0.75rem; background: tokens.$color-accent-soft; border-left: 3px solid tokens.$color-accent-primary; }
+  &__task-list { margin-top: 0.75rem; }
+  &__task-list > summary, &__activity > summary { cursor: pointer; font-weight: 600; }
+  &__tasks, &__activity ol { list-style: none; padding: 0; margin: 0; }
+  &__task { margin-block: 0.5rem; padding: 0.75rem; border: tokens.$border-width solid tokens.$color-border; background: tokens.$color-bg-surface; }
+  &__task summary { display: flex; align-items: center; flex-wrap: wrap; gap: 0.75rem; cursor: pointer; }
+  &__task--running { border-left: 3px solid tokens.$color-accent-primary; }
+  &__task--failed { border-left: 3px solid tokens.$color-status-err; }
+  &__time { margin-left: auto; color: tokens.$color-text-secondary; font-size: 0.75rem; }
+  &__message { margin-bottom: 0; }
+  &__evidence { padding-top: 0.75rem; }
+  pre { white-space: pre-wrap; max-height: 20rem; overflow: auto; font-size: inherit; }
+  &__activity { margin-top: 1rem; padding: 0.75rem; background: tokens.$color-bg-subtle; }
+  &__activity ol { max-height: 15rem; overflow: auto; }
+  &__activity li { display: flex; flex-wrap: wrap; gap: 0.75rem; padding-top: 0.5rem; }
+}
+.sd-ai-work__job--target { outline: 2px solid tokens.$color-accent-primary; scroll-margin-top: 5rem; }

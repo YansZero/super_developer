@@ -1,0 +1,156 @@
+@use "../../../../shared/theme/sass-tokens" as tokens;
+
+.sd-detail__spec-layout {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-3;
+}
+
+.sd-detail__spec-files-layout {
+  display: grid;
+  grid-template-columns: minmax(14rem, 0.8fr) minmax(0, 2fr);
+  gap: tokens.$space-3;
+  min-height: 20rem;
+}
+
+.sd-detail__spec-file-list,
+.sd-detail__spec-file-preview {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-2;
+  min-width: 0;
+  padding: tokens.$space-3;
+  border: tokens.$border-width solid tokens.$color-border;
+  border-radius: tokens.$radius-sm;
+  background-color: tokens.$color-bg-subtle;
+}
+
+.sd-detail__spec-file-list {
+  align-items: stretch;
+  overflow-y: auto;
+  max-height: 34rem;
+}
+
+.sd-detail__spec-file-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: tokens.$space-1;
+  width: 100%;
+  padding: tokens.$space-2 tokens.$space-3;
+  border: tokens.$border-width solid tokens.$color-border;
+  border-radius: tokens.$radius-sm;
+  background-color: tokens.$color-bg-surface;
+  color: tokens.$color-text-primary;
+  text-align: left;
+  overflow-wrap: anywhere;
+  cursor: pointer;
+}
+
+.sd-detail__spec-file-btn:hover,
+.sd-detail__spec-file-btn--active {
+  border-color: tokens.$color-accent-primary;
+  background-color: tokens.$color-accent-soft;
+  color: tokens.$color-accent-ink;
+}
+
+.sd-detail__spec-file-btn span {
+  font-size: tokens.$font-size-xs;
+  font-weight: 700;
+}
+
+.sd-detail__spec-file-btn small {
+  color: tokens.$color-text-secondary;
+  font-size: tokens.$font-size-2xs;
+}
+
+.sd-detail__spec-file-preview {
+  overflow: hidden;
+}
+
+.sd-detail__spec-file-preview .sd-detail__saved-architecture-output {
+  max-height: 34rem;
+  margin: 0;
+  padding: tokens.$space-3;
+  overflow: auto;
+  border: tokens.$border-width solid tokens.$color-border;
+  border-radius: tokens.$radius-sm;
+  background-color: tokens.$color-bg-surface;
+  color: tokens.$color-text-primary;
+}
+
+.sd-detail__spec-saved-path {
+  margin: 0;
+  color: tokens.$color-status-ok;
+  font-size: tokens.$font-size-xs;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.sd-detail__spec-toc {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: tokens.$space-2;
+  padding: tokens.$space-2;
+  border-radius: tokens.$radius-sm;
+  border: tokens.$border-width solid tokens.$color-border;
+  background-color: tokens.$color-bg-subtle;
+}
+
+.sd-detail__toc-btn {
+  padding: tokens.$space-1 tokens.$space-3;
+  border-radius: tokens.$radius-sm;
+  border: tokens.$border-width solid transparent;
+  background-color: transparent;
+  color: tokens.$color-text-secondary;
+  font-size: tokens.$font-size-xs;
+  text-align: left;
+  cursor: pointer;
+}
+
+.sd-detail__toc-btn--active {
+  background-color: tokens.$color-accent-soft;
+  border-color: tokens.$color-accent-primary;
+  color: tokens.$color-accent-ink;
+  font-weight: 600;
+}
+
+.sd-detail__spec-content {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-3;
+  padding: tokens.$space-4;
+  border-radius: tokens.$radius-sm;
+  border: tokens.$border-width solid tokens.$color-border;
+  background-color: tokens.$color-bg-subtle;
+}
+
+.sd-detail__spec-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: tokens.$space-2;
+}
+
+.sd-detail__spec-meta h3 {
+  margin: 0;
+  font-size: tokens.$font-size-md;
+}
+
+.sd-detail__spec-summary {
+  margin: 0;
+  font-size: tokens.$font-size-sm;
+  color: tokens.$color-text-primary;
+}
+
+.sd-detail__spec-clauses {
+  margin: 0;
+  padding-left: tokens.$space-5;
+  font-size: tokens.$font-size-xs;
+  color: tokens.$color-text-secondary;
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-1;
+}

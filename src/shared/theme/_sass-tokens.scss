@@ -1,0 +1,56 @@
+// Shared Sass aliases for the runtime CSS theme tokens.
+// Keep visual themes in tokens.css; these aliases make the same values easy to reuse in SCSS.
+$space-1: var(--sp-1) !default;
+$space-2: var(--sp-2) !default;
+$space-3: var(--sp-3) !default;
+$space-4: var(--sp-4) !default;
+$space-5: var(--sp-5) !default;
+$space-6: var(--sp-6) !default;
+$space-8: var(--sp-8) !default;
+$space-10: var(--sp-10) !default;
+
+$font-size-2xs: var(--fs-2xs) !default;
+$font-size-xs: var(--fs-xs) !default;
+$font-size-sm: var(--fs-sm) !default;
+$font-size-md: var(--fs-md) !default;
+$font-size-lg: var(--fs-lg) !default;
+$font-size-xl: var(--fs-xl) !default;
+$font-size-2xl: var(--fs-2xl) !default;
+$font-size-3xl: var(--fs-3xl) !default;
+$font-mono: var(--font-mono) !default;
+
+$radius-sm: var(--radius-sm) !default;
+$radius-md: var(--radius-md) !default;
+$radius-lg: var(--radius-lg) !default;
+$badge-radius: var(--badge-radius) !default;
+$border-width: var(--border-width) !default;
+
+$color-bg-subtle: var(--bg-subtle) !default;
+$color-bg-surface: var(--bg-surface) !default;
+$color-border: var(--border-color) !default;
+$color-text-primary: var(--text-primary) !default;
+$color-text-secondary: var(--text-secondary) !default;
+$color-text-muted: var(--text-muted) !default;
+$color-accent-primary: var(--accent-primary) !default;
+$color-accent-soft: var(--accent-soft) !default;
+$color-accent-ink: var(--accent-ink) !default;
+$color-accent-solid-fg: var(--accent-solid-fg) !default;
+$color-status-ok: var(--status-ok) !default;
+$color-status-ok-bg: var(--status-ok-bg) !default;
+$color-status-info: var(--status-info) !default;
+$color-status-info-bg: var(--status-info-bg) !default;
+$color-status-warn: var(--status-warn) !default;
+$color-status-warn-bg: var(--status-warn-bg) !default;
+$color-status-err: var(--status-err) !default;
+$color-status-err-bg: var(--status-err-bg) !default;
+$color-danger-solid-bg: var(--danger-solid-bg) !default;
+$color-danger-solid-fg: var(--danger-solid-fg) !default;
+$shadow-card: var(--card-shadow) !default;
+
+// Reference viewport widths for large desktop, laptop, tablet, and narrow phone layouts.
+$breakpoint-ultra-wide: 1920px !default;
+$breakpoint-wide: 1440px !default;
+$breakpoint-desktop: 1280px !default;
+$breakpoint-tablet-landscape: 1024px !default;
+$breakpoint-tablet: 768px !default;
+$breakpoint-mobile: 375px !default;

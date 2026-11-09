@@ -1,0 +1,13 @@
+{
+  "name": "graphify-mcp",
+  "description": "Provides Graphify project knowledge graph MCP query service (supports graph_stats, god_nodes, get_neighbors, shortest_path) | 提供 Graphify 專案知識圖譜 MCP 查詢服務（支援 graph_stats、god_nodes、get_neighbors、shortest_path）",
+  "transport": "stdio",
+  "command": "graphify-mcp",
+  "args": [
+    "--graph",
+    "graphify-out/graph.json"
+  ],
+  "url": null,
+  "env": {},
+  "headers": {}
+}

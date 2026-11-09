@@ -1,0 +1,47 @@
+.sd-dispatch-notification {
+  position: fixed;
+  z-index: 100;
+  inset-inline-end: 1rem;
+  inset-block-end: 1rem;
+  width: min(24rem, calc(100vw - 2rem));
+  padding: .875rem 1rem;
+  border: 1px solid var(--border-color);
+  border-inline-start: 3px solid var(--accent-primary);
+  border-radius: var(--btn-radius);
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+  overflow-wrap: anywhere;
+}
+
+.sd-dispatch-notification p {
+  margin: .35rem 0 0;
+  color: var(--text-secondary);
+  font-size: .875rem;
+}
+
+.sd-dispatch-notification__error {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.sd-dispatch-notification__actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin-top: .65rem;
+}
+
+.sd-dispatch-notification__actions a { color: var(--accent-ink); }
+.sd-dispatch-notification__actions button {
+  padding: .3rem .6rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--btn-radius);
+  background: var(--bg-subtle);
+  color: var(--text-primary);
+  font: inherit;
+  cursor: pointer;
+}

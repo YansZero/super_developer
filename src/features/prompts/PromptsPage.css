@@ -1,0 +1,9 @@
+.sd-prompts-grid--editing { grid-template-columns: minmax(12rem, 3fr) minmax(20rem, 5fr) minmax(18rem, 3fr); }
+.sd-prompts-grid--editing > .sd-ai-assist { min-width: 0; border-left: 1px solid var(--border-color); }
+@media (max-width: 70rem) {
+  .sd-prompts-grid--editing { grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); }
+  .sd-prompts-grid--editing > .sd-ai-assist { grid-column: 1 / -1; border-left: 0; border-top: 1px solid var(--border-color); }
+}
+@media (max-width: 48rem) {
+  .sd-prompts-grid--editing { grid-template-columns: minmax(0, 1fr); }
+}

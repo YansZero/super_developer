@@ -1,0 +1,66 @@
+.sd-prompt-images {
+  display: grid;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.sd-prompt-images__hint,
+.sd-prompt-images__count {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+
+.sd-prompt-images__count {
+  font-weight: 700;
+}
+
+.sd-prompt-images__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  gap: 0.5rem;
+}
+
+.sd-prompt-images__item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border: 2px solid var(--border-color);
+  border-radius: var(--btn-radius);
+  background: var(--bg-subtle);
+}
+
+.sd-prompt-images__item img {
+  width: 3rem;
+  height: 3rem;
+  flex-shrink: 0;
+  object-fit: cover;
+  border: 2px solid var(--border-color);
+}
+
+.sd-prompt-images__item span {
+  min-width: 0;
+  flex: 1;
+  overflow-wrap: anywhere;
+  color: var(--text-primary);
+  font-size: 0.75rem;
+}
+
+.sd-prompt-images__item button {
+  min-height: 2rem;
+  padding: 0.25rem 0.5rem;
+  border: 2px solid var(--border-color);
+  border-radius: var(--btn-radius);
+  background: var(--bg-surface);
+  color: var(--text-secondary);
+  font: inherit;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.sd-prompt-images__item button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}

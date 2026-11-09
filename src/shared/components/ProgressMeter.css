@@ -1,0 +1,182 @@
+.sd-progress {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+  padding: var(--sp-3);
+  border-radius: var(--radius-sm);
+  border: var(--border-width) solid var(--border-color);
+  background-color: var(--bg-subtle);
+}
+
+.sd-progress--missing {
+  border-color: var(--status-warn);
+  background-color: var(--status-warn-bg);
+}
+
+.sd-progress__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-2);
+}
+
+.sd-progress__label {
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.sd-progress__stat {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--accent-ink);
+}
+
+.sd-progress__missing-tag {
+  font-size: var(--fs-2xs);
+  font-weight: 700;
+  padding: var(--sp-1) var(--sp-2);
+  border-radius: var(--radius-sm);
+  border: var(--border-width) solid var(--status-warn);
+  color: var(--status-warn);
+}
+
+.sd-progress__missing-note {
+  margin: 0;
+  font-size: var(--fs-xs);
+  color: var(--text-secondary);
+}
+
+.sd-progress__bar-wrapper {
+  width: 100%;
+}
+
+.sd-progress__bar {
+  display: block;
+  width: 100%;
+  height: 8px;
+  appearance: none;
+  border: var(--border-width) solid var(--border-color);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background-color: var(--bg-canvas);
+}
+
+.sd-progress__bar::-webkit-progress-bar {
+  background-color: var(--bg-canvas);
+}
+
+.sd-progress__bar::-webkit-progress-value {
+  background-color: var(--accent-primary);
+}
+
+.sd-progress__bar::-moz-progress-bar {
+  background-color: var(--accent-primary);
+}
+
+.sd-progress__segmented {
+  display: none;
+  width: 100%;
+  gap: 4px;
+}
+
+.sd-progress__seg {
+  flex: 1;
+  height: 8px;
+  background-color: var(--bg-canvas);
+  border-radius: 2px;
+}
+
+.sd-progress__seg--fill {
+  background-color: var(--accent-primary);
+}
+
+/* Esports 戰況 HUD 分段能量條 */
+html[data-theme="esports"] .sd-progress__bar {
+  display: none;
+}
+
+html[data-theme="esports"] .sd-progress__segmented {
+  display: flex;
+  gap: 4px;
+}
+
+html[data-theme="esports"] .sd-progress__seg {
+  height: 8px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--card-border-color);
+  border-radius: 0;
+}
+
+html[data-theme="esports"] .sd-progress__seg--fill {
+  background: var(--accent-primary);
+  border-color: var(--accent-primary);
+  box-shadow: none;
+}
+
+/* 8-Bit 點陣 RPG 像素方塊血量條 (HP Bar) */
+html[data-theme="8bit"] .sd-progress {
+  border: var(--card-border-width) solid var(--card-border-color);
+  box-shadow: var(--card-shadow);
+  border-radius: 0;
+  background-color: var(--bg-surface);
+}
+
+html[data-theme="8bit"] .sd-progress__bar {
+  display: none;
+}
+
+html[data-theme="8bit"] .sd-progress__segmented {
+  display: flex;
+  gap: 2px;
+  padding: 2px;
+  background: var(--theme-shadow);
+  border: 2px solid var(--card-border-color);
+}
+
+html[data-theme="8bit"] .sd-progress__seg {
+  height: 10px;
+  background: var(--bg-elevated);
+  border-radius: 0;
+}
+
+html[data-theme="8bit"] .sd-progress__seg--fill {
+  background: var(--status-ok);
+  box-shadow: none;
+}
+
+/* Retro 經典 90 年代視窗下陷進度條 */
+html[data-theme="retro"] .sd-progress {
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-elevated);
+  border-radius: 0;
+  box-shadow: inset 1px 1px 0px var(--theme-bevel-light), 1px 1px 0px var(--theme-shadow);
+}
+
+html[data-theme="retro"] .sd-progress__bar {
+  display: none;
+}
+
+html[data-theme="retro"] .sd-progress__segmented {
+  display: flex;
+  gap: 2px;
+  padding: 2px;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-color);
+}
+
+html[data-theme="retro"] .sd-progress__seg {
+  height: 12px;
+  background: var(--bg-canvas);
+  border-radius: 0;
+}
+
+html[data-theme="retro"] .sd-progress__seg--fill {
+  background: var(--accent-primary);
+}
+
+.sd-progress__source {
+  font-family: var(--font-mono);
+  font-size: var(--fs-2xs);
+  color: var(--text-muted);
+}

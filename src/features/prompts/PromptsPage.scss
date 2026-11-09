@@ -1,0 +1,95 @@
+@use '../../shared/theme/sass-tokens' as tokens;
+
+.sd-prompts-grid {
+  gap: tokens.$space-4;
+  padding: tokens.$space-4;
+  background: tokens.$color-bg-subtle;
+
+  > .sd-rules-workspace__list-pane,
+  > .sd-rules-workspace__preview,
+  > .sd-ai-assist {
+    min-width: 0;
+    border: tokens.$border-width solid tokens.$color-border;
+    background: tokens.$color-bg-surface;
+  }
+
+  > .sd-rules-workspace__list-pane li { padding: 0; }
+  .sd-rules-workspace__rule-select { width: 100%; min-height: 2.5rem; padding: tokens.$space-3; }
+  .sd-rules-workspace__rule-select:focus-visible { outline: tokens.$border-width solid tokens.$color-accent-primary; outline-offset: calc(-1 * #{tokens.$border-width}); }
+}
+
+.sd-prompts-translation {
+  flex-direction: column;
+
+  &__row { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: tokens.$space-3; }
+  &__languages { display: flex; flex-wrap: wrap; gap: tokens.$space-3; }
+  &__models { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: tokens.$space-3; width: 100%; }
+  .sd-rules-workspace__direct-add-field { display: flex; flex-direction: column; align-items: stretch; min-width: 0; }
+  select { width: 100%; min-width: 0; padding: tokens.$space-2; border: tokens.$border-width solid tokens.$color-border; background: tokens.$color-bg-surface; color: tokens.$color-text-primary; }
+}
+
+.sd-prompts-document {
+  display: flex;
+  min-width: 0;
+  max-height: 40rem;
+  overflow: auto;
+  border: tokens.$border-width solid tokens.$color-border;
+  background: tokens.$color-bg-surface;
+  color: tokens.$color-text-primary;
+
+  &__outline {
+    position: sticky;
+    top: 0;
+    align-self: flex-start;
+    flex: 0 0 12rem;
+    display: flex;
+    flex-direction: column;
+    gap: tokens.$space-1;
+    max-height: 40rem;
+    padding: tokens.$space-3;
+    overflow: auto;
+    border-right: tokens.$border-width solid tokens.$color-border;
+    background: tokens.$color-bg-subtle;
+    font-size: tokens.$font-size-sm;
+
+    button {
+      padding: tokens.$space-1 tokens.$space-2;
+      border: 0;
+      background: transparent;
+      color: tokens.$color-text-secondary;
+      text-align: left;
+      cursor: pointer;
+      overflow-wrap: anywhere;
+    }
+    button:hover, button:focus-visible { background: tokens.$color-accent-soft; color: tokens.$color-accent-ink; }
+    .is-subheading { padding-left: tokens.$space-4; }
+  }
+
+  &__body {
+    min-width: 0;
+    flex: 1;
+    padding: tokens.$space-5;
+    font-size: tokens.$font-size-md;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+
+    .sd-detail__saved-architecture-output { max-height: none; padding: 0; overflow: visible; border: 0; background: transparent; color: inherit; }
+    h1, h2, h3, h4, h5, h6 { margin: tokens.$space-5 0 tokens.$space-3; line-height: 1.35; }
+    h1 { font-size: tokens.$font-size-3xl; }
+    h2 { font-size: tokens.$font-size-2xl; }
+    h3 { font-size: tokens.$font-size-xl; }
+    p, ul, ol { margin: tokens.$space-3 0; }
+    li { margin: tokens.$space-1 0; }
+    hr { margin: tokens.$space-5 0; border: 0; border-top: tokens.$border-width solid tokens.$color-border; }
+    code { padding: 0 tokens.$space-1; background: tokens.$color-bg-subtle; font-family: tokens.$font-mono; }
+    pre { padding: tokens.$space-3; overflow: auto; background: tokens.$color-bg-subtle; }
+    pre code { padding: 0; }
+    .sd-detail__markdown-task { display: flex; align-items: baseline; gap: tokens.$space-2; list-style: none; }
+  }
+}
+
+@media (max-width: 48rem) {
+  .sd-prompts-translation__models { grid-template-columns: minmax(0, 1fr); }
+  .sd-prompts-document { flex-direction: column; }
+  .sd-prompts-document__outline { position: static; flex-basis: auto; max-height: 12rem; border-right: 0; border-bottom: tokens.$border-width solid tokens.$color-border; }
+}

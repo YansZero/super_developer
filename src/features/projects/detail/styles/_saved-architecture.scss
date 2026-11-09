@@ -1,0 +1,88 @@
+@use "../../../../shared/theme/sass-tokens" as tokens;
+
+.sd-detail__saved-architecture {
+  margin-top: 16px;
+  padding: 16px;
+  border: 1px solid var(--sd-border, #dedced);
+  border-radius: 12px;
+  background: var(--sd-surface, #fff);
+}
+
+.sd-detail__saved-architecture-head {
+  margin-bottom: 12px;
+}
+
+.sd-detail__saved-architecture-head .sd-detail__section-sub {
+  margin: 6px 0 0;
+}
+
+.sd-detail__saved-architecture-output {
+  max-height: 560px;
+  margin: 0;
+  padding: 16px;
+  overflow: auto;
+  border: 1px solid var(--sd-border, #dedced);
+  border-radius: 10px;
+  background: var(--sd-surface-muted, #f8f7fc);
+  color: var(--sd-text, #202033);
+  font: inherit;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+
+.sd-detail__saved-architecture-output > :first-child {
+  margin-top: 0;
+}
+
+.sd-detail__saved-architecture-output > :last-child {
+  margin-bottom: 0;
+}
+
+.sd-detail__saved-architecture-output h1,
+.sd-detail__saved-architecture-output h2,
+.sd-detail__saved-architecture-output h3,
+.sd-detail__saved-architecture-output h4,
+.sd-detail__saved-architecture-output h5,
+.sd-detail__saved-architecture-output h6 {
+  margin: 1.1em 0 0.45em;
+  line-height: 1.35;
+}
+
+.sd-detail__saved-architecture-output p,
+.sd-detail__saved-architecture-output ul,
+.sd-detail__saved-architecture-output ol {
+  margin: 0.65em 0;
+}
+
+.sd-detail__saved-architecture-output ul,
+.sd-detail__saved-architecture-output ol {
+  padding-left: 1.5em;
+}
+
+.sd-detail__saved-architecture-output li + li {
+  margin-top: 0.3em;
+}
+
+.sd-detail__saved-architecture-output hr {
+  margin: 1em 0;
+  border: 0;
+  border-top: 1px solid var(--sd-border, #dedced);
+}
+
+.sd-detail__saved-architecture-output :not(pre) > code {
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+  background: var(--sd-surface, #fff);
+  font-family: var(--font-mono, ui-monospace, monospace);
+}
+
+.sd-detail__saved-architecture-output pre {
+  max-width: 100%;
+  margin: 0.8em 0;
+  padding: 12px;
+  overflow: auto;
+  border-radius: 8px;
+  background: var(--sd-surface, #fff);
+  font-family: var(--font-mono, ui-monospace, monospace);
+  white-space: pre;
+}

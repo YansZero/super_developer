@@ -1,0 +1,31 @@
+@use './styles/project-shell';
+@use './styles/todo-board';
+@use './styles/spec-viewer';
+@use './styles/architecture-tree';
+@use './styles/jira-workbench';
+@use './styles/saved-architecture';
+@use './styles/dispatch-confirmation';
+@use './styles/responsive';
+
+/* Use the active workspace tokens for saved Markdown instead of the legacy light fallback. */
+.sd-detail__saved-architecture {
+  border-color: var(--border-color);
+  background: var(--bg-surface);
+  color: var(--text-primary);
+}
+
+.sd-detail__saved-architecture-output {
+  border-color: var(--border-color);
+  background: var(--bg-subtle);
+  color: var(--text-primary);
+}
+
+.sd-detail__saved-architecture-output :not(pre) > code,
+.sd-detail__saved-architecture-output pre {
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+}
+
+.sd-detail__saved-architecture-output hr {
+  border-top-color: var(--border-color);
+}

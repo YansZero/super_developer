@@ -1,0 +1,206 @@
+.sd-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-1);
+  padding: var(--sp-1) var(--sp-2);
+  border-radius: var(--badge-radius, var(--radius-sm));
+  border: var(--border-width) solid var(--border-color);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  line-height: 1.25;
+  white-space: nowrap;
+}
+
+html[data-theme="modern"] .sd-badge {
+  border-radius: 0;
+  padding: 2px 6px;
+  border: 1px solid var(--border-color);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  font-weight: 500;
+}
+
+html[data-theme="modern"] .sd-badge--ok {
+  background-color: #ebf7ee;
+  color: #1b8354;
+  border-color: #c2e7ce;
+}
+
+html[data-theme="modern"] .sd-badge--warn {
+  background-color: #fef6e7;
+  color: #b4690e;
+  border-color: #f9dcb1;
+}
+
+html[data-theme="modern"] .sd-badge--err {
+  background-color: #fde8e8;
+  color: #c92a2a;
+  border-color: #f8bdbd;
+}
+
+html[data-theme="modern"] .sd-badge--accent {
+  background-color: #eff4ff;
+  color: #315aa6;
+  border-color: #c5d5ff;
+}
+
+html[data-theme="modern"] .sd-badge--neutral {
+  background-color: #eff4ff;
+  color: #434751;
+  border-color: #c3c6d3;
+}
+
+html[data-theme="esports"] .sd-badge {
+  border-radius: 2px;
+  border: 1px solid var(--card-border-color);
+  background-color: var(--accent-soft);
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: none;
+}
+
+html[data-theme="esports"] .sd-badge--neutral {
+  background-color: var(--bg-subtle);
+  border: 1px solid var(--card-border-color);
+  color: var(--text-secondary);
+}
+
+html[data-theme="esports"] .sd-badge--mono {
+  background-color: var(--accent-soft);
+  border: 1px solid var(--accent-primary);
+  color: var(--text-primary);
+  box-shadow: none;
+}
+
+html[data-theme="8bit"] .sd-badge {
+  border-radius: 0;
+  border: 2px solid var(--card-border-color);
+  box-shadow: 2px 2px 0px var(--theme-shadow);
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+}
+
+html[data-theme="8bit"] .sd-badge--neutral,
+html[data-theme="8bit"] .sd-badge--mono {
+  background-color: var(--bg-elevated);
+  border: 2px solid var(--accent-primary);
+  color: var(--text-primary);
+}
+
+html[data-theme="retro"] .sd-badge {
+  border-radius: 0;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-elevated);
+  color: var(--text-primary);
+  box-shadow: inset 1px 1px 0px var(--theme-bevel-light), 1px 1px 0px var(--theme-shadow);
+}
+
+html[data-theme="retro"] .sd-badge--neutral {
+  background-color: var(--bg-subtle);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+html[data-theme="retro"] .sd-badge--mono {
+  background-color: var(--bg-subtle);
+  border: 1px solid var(--accent-secondary);
+  color: var(--accent-secondary);
+}
+
+html[data-theme="retro"] .sd-badge--accent {
+  background-color: var(--accent-soft);
+  border: 1px solid var(--accent-primary);
+  color: var(--accent-ink);
+}
+
+html[data-theme="retro"] .sd-badge--ok {
+  background-color: var(--status-ok-bg);
+  border: 1px solid var(--status-ok);
+  color: var(--status-ok);
+}
+
+html[data-theme="retro"] .sd-badge--warn {
+  background-color: var(--status-warn-bg);
+  border: 1px solid var(--status-warn);
+  color: var(--status-warn);
+}
+
+html[data-theme="retro"] .sd-badge--err {
+  background-color: var(--status-err-bg);
+  border: 1px solid var(--status-err);
+  color: var(--status-err);
+}
+
+.sd-badge--mono {
+  font-family: var(--font-mono);
+}
+
+.sd-badge--neutral {
+  background-color: var(--bg-subtle);
+  color: var(--text-secondary);
+}
+
+.sd-badge--accent {
+  background-color: var(--accent-soft);
+  color: var(--accent-ink);
+  border-color: var(--accent-primary);
+}
+
+.sd-badge--ok {
+  background-color: var(--status-ok-bg);
+  color: var(--status-ok);
+  border-color: var(--status-ok);
+}
+
+.sd-badge--warn {
+  background-color: var(--status-warn-bg);
+  color: var(--status-warn);
+  border-color: var(--status-warn);
+}
+
+.sd-badge--err {
+  background-color: var(--status-err-bg);
+  color: var(--status-err);
+  border-color: var(--status-err);
+}
+
+.sd-badge--solid-danger {
+  background-color: var(--danger-solid-bg);
+  color: var(--danger-solid-fg);
+  border-color: var(--danger-solid-border);
+}
+
+.sd-badge-nogit {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: var(--sp-1) var(--sp-3);
+  border-radius: var(--radius-sm);
+  border: 2px solid var(--danger-solid-border);
+  background-color: var(--danger-solid-bg);
+  color: var(--danger-solid-fg);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+}
+
+.sd-badge-nogit__icon {
+  font-size: var(--fs-sm);
+}
+
+.sd-badge-nogit__text {
+  letter-spacing: 0.02em;
+}
+
+.sd-badge-gitrow {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.sd-badge-branch-label {
+  color: var(--text-secondary);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+}

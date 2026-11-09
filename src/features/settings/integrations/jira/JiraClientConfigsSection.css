@@ -1,0 +1,43 @@
+.sd-jira-client-configs { display: grid; gap: var(--sp-3); padding: var(--sp-4); border: var(--border-width) solid var(--border-color); border-radius: var(--radius-md); background: var(--bg-surface); }
+.sd-jira-client-configs__head { display: flex; justify-content: space-between; align-items: flex-start; gap: var(--sp-3); }
+.sd-jira-client-configs__heading { display: flex; align-items: flex-start; gap: var(--sp-3); }
+.sd-jira-client-configs h3 { margin: 0; font-size: var(--fs-md); }
+.sd-jira-client-configs p { margin: var(--sp-1) 0 0; color: var(--text-secondary); font-size: var(--fs-xs); }
+.sd-jira-client-configs button { padding: var(--sp-2) var(--sp-3); border: var(--border-width) solid var(--border-color); border-radius: var(--radius-sm); background: var(--bg-elevated); color: var(--text-primary); cursor: pointer; }
+.sd-jira-client-configs__list { display: grid; gap: var(--sp-2); margin: 0; padding: 0; list-style: none; }
+.sd-jira-client-configs__list li { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-3); padding: var(--sp-2) var(--sp-3); border-radius: var(--radius-sm); background: var(--bg-elevated); }
+.sd-jira-client-configs__identity { display: flex; align-items: center; gap: var(--sp-2); min-width: 0; }
+.sd-jira-client-configs__identity div { display: grid; gap: var(--sp-1); min-width: 0; }
+.sd-jira-client-configs__identity small { color: var(--text-secondary); font-size: var(--fs-xs); overflow-wrap: anywhere; }
+.sd-jira-client-configs__identity code { color: var(--text-secondary); font-size: var(--fs-xs); }
+.sd-jira-client-configs__actions { display: flex; align-items: center; flex-wrap: wrap; justify-content: flex-end; gap: var(--sp-2); }
+.sd-jira-client-configs__actions a { padding: var(--sp-2) var(--sp-3); border-radius: var(--radius-sm); background: var(--accent-primary); color: var(--accent-solid-fg); font-size: var(--fs-xs); font-weight: 600; text-decoration: none; }
+.sd-jira-client-configs__icon-button {
+  display: inline-grid;
+  width: 2rem;
+  height: 2rem;
+  align-items: center;
+  justify-content: center;
+  place-items: center;
+  padding: 0;
+  border: var(--border-width) solid transparent;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  cursor: pointer;
+}
+.sd-jira-client-configs__icon-button svg { display: block; width: 1.125rem; height: 1.125rem; }
+.sd-jira-client-configs__edit { color: var(--accent-ink); }
+.sd-jira-client-configs__edit:hover { border-color: var(--accent-primary); background: var(--accent-soft); }
+.sd-jira-client-configs__delete { color: var(--status-err); }
+.sd-jira-client-configs__delete:hover { border-color: var(--status-err); background: var(--status-err-bg); }
+.sd-jira-client-configs__icon-button:focus-visible { outline: 2px solid var(--accent-primary); outline-offset: 2px; }
+.sd-jira-client-configs__delete--confirm { background: var(--status-err); color: var(--bg-surface); }
+.sd-jira-client-configs__form { display: grid; gap: var(--sp-2); grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.sd-jira-client-configs__form-head { display: flex; align-items: center; justify-content: space-between; grid-column: 1 / -1; gap: var(--sp-2); }
+.sd-jira-client-configs__form-head strong { color: var(--text-primary); font-size: var(--fs-sm); }
+.sd-jira-client-configs__form-head button { padding: var(--sp-1) var(--sp-2); }
+.sd-jira-client-configs__form label { display: grid; gap: var(--sp-1); color: var(--text-secondary); font-size: var(--fs-xs); }
+.sd-jira-client-configs__form input { min-width: 0; padding: var(--sp-2); border: var(--border-width) solid var(--border-color); border-radius: var(--radius-sm); background: var(--bg-surface); color: var(--text-primary); font: inherit; }
+.sd-jira-client-configs__form button { align-self: end; background: var(--accent-primary); border-color: var(--accent-primary); color: var(--accent-solid-fg); }
+@media (max-width: 840px) { .sd-jira-client-configs__form { grid-template-columns: 1fr; } }
+@media (max-width: 840px) { .sd-jira-client-configs__list li { align-items: flex-start; flex-direction: column; } .sd-jira-client-configs__actions { justify-content: flex-start; } }

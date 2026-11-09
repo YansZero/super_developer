@@ -1,0 +1,31 @@
+@use '../../../../shared/theme/sass-tokens' as tokens;
+
+@mixin detail-surface(
+  $padding: tokens.$space-4,
+  $radius: tokens.$radius-lg,
+  $background: tokens.$color-bg-surface,
+  $border-color: tokens.$color-border,
+  $border-width: tokens.$border-width
+) {
+  padding: $padding;
+  border-radius: $radius;
+  border: $border-width solid $border-color;
+  background-color: $background;
+}
+
+@mixin detail-control(
+  $padding: tokens.$space-1 tokens.$space-3,
+  $radius: tokens.$radius-sm,
+  $font-size: tokens.$font-size-xs,
+  $background: tokens.$color-bg-surface,
+  $color: tokens.$color-text-primary,
+  $border-color: tokens.$color-border,
+  $border-width: tokens.$border-width
+) {
+  padding: $padding;
+  border-radius: $radius;
+  border: $border-width solid $border-color;
+  background-color: $background;
+  color: $color;
+  font-size: $font-size;
+}

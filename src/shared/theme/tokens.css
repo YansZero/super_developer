@@ -1,0 +1,279 @@
+:root {
+  --fs-2xs: 0.625rem;
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-md: 1rem;
+  --fs-lg: 1.125rem;
+  --fs-xl: 1.25rem;
+  --fs-2xl: 1.5rem;
+  --fs-3xl: 1.75rem;
+
+  --fw-regular: 400;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  --sp-1: 0.25rem;
+  --sp-2: 0.5rem;
+  --sp-3: 0.75rem;
+  --sp-4: 1rem;
+  --sp-5: 1.25rem;
+  --sp-6: 1.5rem;
+  --sp-8: 2rem;
+  --sp-10: 2.5rem;
+
+  --danger-solid-bg: #dc2626;
+  --danger-solid-fg: #ffffff;
+  --danger-solid-border: #991b1b;
+}
+
+html,
+html[data-theme="modern"] {
+  --font-sans: "Inter", "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "SFMono-Regular", Consolas, monospace;
+  --bg-canvas: #f8f7fc;
+  --bg-surface: #ffffff;
+  --bg-elevated: #f3f1f9;
+  --bg-subtle: #faf9fd;
+  --text-primary: #18181b;
+  --text-secondary: #52525b;
+  --text-muted: #71717a;
+  --border-color: #e6e4f0;
+  --border-strong: #c4b5fd;
+  --accent-primary: #635bff;
+  --accent-secondary: #f97316;
+  --accent-soft: #f0eeff;
+  --accent-secondary-soft: #fff1e8;
+  --accent-ink: #4f46e5;
+  --accent-solid-fg: #ffffff;
+  --status-ok: #16a34a;
+  --status-ok-bg: #dcfce7;
+  --status-info: #2563eb;
+  --status-info-bg: #dbeafe;
+  --status-warn: #d97706;
+  --status-warn-bg: #fef3c7;
+  --status-err: #dc2626;
+  --status-err-bg: #fee2e2;
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --border-width: 1px;
+  --card-shadow: 0 2px 12px rgba(24, 24, 27, 0.05);
+
+  /* 排版幾何 Token */
+  --card-clip-path: none;
+  --btn-clip-path: none;
+  --hud-clip-path: none;
+  --card-radius: 0px;
+  --btn-radius: 0px;
+  --badge-radius: 0px;
+  --card-border-width: 1px;
+  --card-border-color: #e6e4f0;
+  --theme-shadow: rgba(24, 24, 27, 0.12);
+  --theme-bevel-light: #ffffff;
+  --theme-bevel-dark: #c4c4cc;
+  --scanline-display: none;
+  --reticle-display: none;
+  --pixel-cursor-display: none;
+  --win95-chrome-display: none;
+  --hud-chrome-display: none;
+  --win95-bevel-raised: none;
+  --win95-bevel-sunken: none;
+}
+
+html[data-theme="esports"] {
+  --font-sans: "Orbitron", "Chakra Petch", "PingFang TC", "Noto Sans TC", sans-serif;
+  --font-mono: "JetBrains Mono", Consolas, monospace;
+  --bg-canvas: #0b1014;
+  --bg-surface: #111a20;
+  --bg-elevated: #18262d;
+  --bg-subtle: #0e171c;
+  --text-primary: #e5f1f2;
+  --text-secondary: #9ab2b6;
+  --text-muted: #668086;
+  --border-color: #294852;
+  --border-strong: #f05a8e;
+  --accent-primary: #32d5d0;
+  --accent-secondary: #f05a8e;
+  --accent-soft: #123538;
+  --accent-secondary-soft: #3a1d2c;
+  --accent-ink: #8ce9e3;
+  --accent-solid-fg: #071416;
+  --status-ok: #7bd88f;
+  --status-ok-bg: #163424;
+  --status-info: #75bde4;
+  --status-info-bg: #162e3a;
+  --status-warn: #f0b45d;
+  --status-warn-bg: #3c2a18;
+  --status-err: #f07b8f;
+  --status-err-bg: #3d1d27;
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --border-width: 1px;
+  --card-shadow: 0 2px 0 var(--theme-shadow);
+
+  /* 排版幾何 Token：45° 切邊角與 HUD 控制台 */
+  --card-clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 0 100%);
+  --btn-clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%);
+  --hud-clip-path: polygon(12px 0, 100% 0, calc(100% - 12px) 100%, 0 100%);
+  --card-radius: 0px;
+  --btn-radius: 0px;
+  --badge-radius: 0px;
+  --card-border-width: 1px;
+  --card-border-color: #356875;
+  --theme-shadow: rgba(0, 0, 0, 0.28);
+  --theme-bevel-light: #3d5e66;
+  --theme-bevel-dark: #071014;
+  --scanline-display: block;
+  --reticle-display: block;
+  --pixel-cursor-display: none;
+  --win95-chrome-display: none;
+  --hud-chrome-display: flex;
+  --win95-bevel-raised: none;
+  --win95-bevel-sunken: none;
+}
+
+html[data-theme="8bit"] {
+  --font-sans: "Press Start 2P", "Courier New", "PingFang TC", "Noto Sans TC", monospace;
+  --font-mono: "Courier New", Consolas, monospace;
+  --bg-canvas: #201a2e;
+  --bg-surface: #2c2540;
+  --bg-elevated: #3d3558;
+  --bg-subtle: #241d34;
+  --text-primary: #fff1c9;
+  --text-secondary: #c8bddf;
+  --text-muted: #9b8fb6;
+  --border-color: #816f9f;
+  --border-strong: #fff1c9;
+  --accent-primary: #f5b94c;
+  --accent-secondary: #e86b8a;
+  --accent-soft: #49341a;
+  --accent-secondary-soft: #482336;
+  --accent-ink: #ffd97a;
+  --accent-solid-fg: #201a2e;
+  --status-ok: #71d69b;
+  --status-ok-bg: #1e3a32;
+  --status-info: #83b8f2;
+  --status-info-bg: #202f55;
+  --status-warn: #f3a76e;
+  --status-warn-bg: #4a2c23;
+  --status-err: #f07878;
+  --status-err-bg: #4b2028;
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --border-width: 3px;
+  --card-shadow: 4px 4px 0px var(--theme-shadow);
+
+  /* 排版幾何 Token：厚重像素邊框與純黑硬階梯陰影 */
+  --card-clip-path: none;
+  --btn-clip-path: none;
+  --hud-clip-path: none;
+  --card-radius: 0px;
+  --btn-radius: 0px;
+  --badge-radius: 0px;
+  --card-border-width: 3px;
+  --card-border-color: #f5b94c;
+  --theme-shadow: #120e1b;
+  --theme-bevel-light: #fff1c9;
+  --theme-bevel-dark: #120e1b;
+  --scanline-display: none;
+  --reticle-display: none;
+  --pixel-cursor-display: inline-block;
+  --win95-chrome-display: none;
+  --hud-chrome-display: none;
+  --win95-bevel-raised: none;
+  --win95-bevel-sunken: none;
+}
+
+html[data-theme="retro"] {
+  --font-sans: "VT323", "IBM Plex Mono", "PingFang TC", "Noto Sans TC", monospace;
+  --font-mono: "IBM Plex Mono", "Courier New", Consolas, monospace;
+  --bg-canvas: #08120d;
+  --bg-surface: #0d1d14;
+  --bg-elevated: #12271a;
+  --bg-subtle: #0a1710;
+  --text-primary: #d8f7dc;
+  --text-secondary: #92c69e;
+  --text-muted: #5d8a68;
+  --border-color: #2f6d49;
+  --border-strong: #f0b45d;
+  --accent-primary: #7ce38f;
+  --accent-secondary: #f0b45d;
+  --accent-soft: #153924;
+  --accent-secondary-soft: #3c2b18;
+  --accent-ink: #b7f7bf;
+  --accent-solid-fg: #06100a;
+  --status-ok: #7ce38f;
+  --status-ok-bg: #153924;
+  --status-info: #85c7d9;
+  --status-info-bg: #16323a;
+  --status-warn: #f0b45d;
+  --status-warn-bg: #3c2b18;
+  --status-err: #f27c78;
+  --status-err-bg: #432025;
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --border-width: 2px;
+  --card-shadow: 2px 2px 0px var(--theme-shadow);
+
+  /* 排版幾何 Token：90 年代視窗系統 3D 浮雕與下陷凹槽 */
+  --card-clip-path: none;
+  --btn-clip-path: none;
+  --hud-clip-path: none;
+  --card-radius: 0px;
+  --btn-radius: 0px;
+  --badge-radius: 0px;
+  --card-border-width: 2px;
+  --card-border-color: #2f6d49;
+  --theme-shadow: #030804;
+  --theme-bevel-light: #5d8a68;
+  --theme-bevel-dark: #030804;
+  --scanline-display: none;
+  --reticle-display: none;
+  --pixel-cursor-display: none;
+  --win95-chrome-display: flex;
+  --hud-chrome-display: none;
+  --win95-bevel-raised: inset -1px -1px 0px var(--theme-bevel-dark), inset 1px 1px 0px var(--theme-bevel-light), inset -2px -2px 0px var(--card-border-color), inset 2px 2px 0px var(--bg-elevated);
+  --win95-bevel-sunken: inset 1px 1px 0px var(--card-border-color), inset -1px -1px 0px var(--theme-bevel-light), inset 2px 2px 0px var(--theme-bevel-dark), inset -2px -2px 0px var(--bg-elevated);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-canvas);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: var(--fs-md);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: var(--fs-sm);
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}
+
+code,
+pre {
+  font-family: var(--font-mono);
+}
